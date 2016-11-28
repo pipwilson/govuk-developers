@@ -14,6 +14,8 @@ activate :sprockets
 configure :build do
 end
 
+ignore 'schema.html.md.erb'
+
 require_relative './lib/dashboard/dashboard'
 
 helpers do
