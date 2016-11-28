@@ -21,3 +21,14 @@ helpers do
     Dashboard.new
   end
 end
+
+require_relative './lib/content_schemas/content_schema'
+
+ContentSchema.schema_names.each do |schema_name|
+  schema = ContentSchema.new(schema_name)
+
+  proxy "/content-schemas/#{schema_name}.html", "schema.html", locals: {
+    schema: schema,
+    page_title: "Schema: #{schema.schema_name}",
+  }
+end

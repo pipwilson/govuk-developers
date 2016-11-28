@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
 
     <title>
-      <%= current_page.data.title %> - GOV.UK Developers Documentation
+      <%= locals.key?(:page_title) ? page_title : current_page.data.title %> - GOV.UK Developers Documentation
     </title>
 
     <link rel="stylesheet" href="/assets/css/stolen-from-docs.css">

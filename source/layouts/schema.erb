@@ -1,0 +1,51 @@
+<% wrap_layout :default do %>
+  <div class="app-pane__toc">
+    <nav class="toc">
+      <ul>
+        <% ContentSchema.schema_names.each do |schema_name| %>
+          <li><%= link_to schema_name, "/content-schemas/#{schema_name}.html" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="app-pane__content">
+    <div id="content" class="technical-documentation">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
+
+<style media="screen">
+  table.schema-table {
+    overflow: auto;
+    border-collapse: collapse;
+    border-spacing: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+
+  table.schema-table th,
+  table.schema-table td {
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  table.schema-table td {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  table.schema-table td:first-child {
+    width: 200px;
+
+    strong {
+      display: block;
+    }
+  }
+
+  table.schema-table tr:nth-child(odd)>td {
+  }
+</style>

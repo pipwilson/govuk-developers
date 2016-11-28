@@ -14,6 +14,8 @@ gem 'middleman-sprockets', '~> 4.0.0'
 
 gem 'redcarpet', '~> 3.3.2'
 
+gem 'govuk_schemas', '~> 2.0.0'
+
 # GitHub API
 gem 'octokit'
 gem 'faraday-http-cache'

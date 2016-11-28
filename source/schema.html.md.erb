@@ -1,0 +1,78 @@
+---
+layout: schema
+---
+
+<%= partial 'partials/header', locals: { title: page_title } %>
+
+## Frontend schema
+
+This is the schema describing what you'll get back from the [content-store](https://github.com/alphagov/content-store).
+
+<%= schema.table_of_properties(schema.frontend_properties) %>
+
+[View this schema on GitHub](https://github.com/alphagov/govuk-content-schemas/blob/master/dist/formats/<%= schema.schema_name %>/frontend/schema.json)
+
+### Random example
+
+```json
+<%= JSON.pretty_generate(schema.random_frontend_payload) %>
+```
+
+---
+
+## `publisher` payload
+
+This is what publisher apps should send to the publishing-api in This is what
+a publisher application sends to the publishing-api in a
+[`put_content`](http://www.rubydoc.info/github/alphagov/gds-api-adapters/GdsApi/PublishingApiV2#put_content-instance_method) call.
+
+### Attributes
+
+<%= schema.table_of_properties(schema.publisher_properties) %>
+
+[View this schema on GitHub](https://github.com/alphagov/govuk-content-schemas/blob/master/dist/formats/<%= schema.schema_name %>/publisher_v2/schema.json)
+
+### JSON Schema
+
+```json
+<%= JSON.pretty_generate(schema.publisher_schema) %>
+```
+
+### Random example
+
+```json
+<%= JSON.pretty_generate(schema.random_publisher_payload) %>
+```
+
+---
+
+## `links` payload
+
+The links for this item. This is what a publisher sends in a [`patch_links`](http://www.rubydoc.info/github/alphagov/gds-api-adapters/GdsApi/PublishingApiV2#patch_links-instance_method) call.
+
+### Attributes
+
+<%= schema.table_of_properties(schema.links_properties) %>
+
+[View this schema on GitHub](https://github.com/alphagov/govuk-content-schemas/blob/master/dist/formats/<%= schema.schema_name %>/publisher_v2/links.json)
+
+### JSON Schema
+
+```json
+<%= JSON.pretty_generate(schema.links_schema) %>
+```
+
+### Random example
+
+```json
+<%= JSON.pretty_generate(schema.random_links_payload) %>
+```
+
+<style media="screen">
+  code.json {
+    max-height: 200px;
+    overflow-y: scroll;
+    font-size: 10px;
+    display: block;
+  }
+</style>
