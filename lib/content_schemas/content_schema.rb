@@ -4,7 +4,7 @@ require 'govuk_schemas'
 
 class ContentSchema
   def self.schema_names
-    Dir.glob("#{GovukSchemas::CONTENT_SCHEMA_DIR}/dist/formats/*").map { |directory| File.basename(directory) } - %w[gone special_route]
+    Dir.glob("#{GovukSchemas::CONTENT_SCHEMA_DIR}/dist/formats/*").map { |directory| File.basename(directory) } - %w[gone special_route redirect]
   end
 
   attr_reader :schema_name
