@@ -14,7 +14,7 @@ activate :sprockets
 configure :build do
 end
 
-ignore 'schema.html.md.erb'
+ignore 'schema_template.html.md.erb'
 
 require_relative './lib/dashboard/dashboard'
 
@@ -29,7 +29,7 @@ require_relative './lib/content_schemas/content_schema'
 ContentSchema.schema_names.each do |schema_name|
   schema = ContentSchema.new(schema_name)
 
-  proxy "/content-schemas/#{schema_name}.html", "schema.html", locals: {
+  proxy "/content-schemas/#{schema_name}.html", "schema_template.html", locals: {
     schema: schema,
     page_title: "Schema: #{schema.schema_name}",
   }
